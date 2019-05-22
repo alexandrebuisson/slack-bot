@@ -24,7 +24,7 @@ router.post('/randommeme', function(req, res) {
 });
 
 router.post('/randomchucknorris', function(req, res, next) {
-  request("https://api.chucknorris.io/jokes/rando", function(err, response, body) {
+  request("https://api.chucknorris.io/jokes/random", function(err, response, body) {
     if(err || response.statusCode !== 200) {
       return  res.json({response_type: 'in_channel', channel: 'CHSSBBX5F', text: "Erreur :/ merci de contacter @Alex'"})
     }
