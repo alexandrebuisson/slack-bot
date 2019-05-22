@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const randomPuppy = require('random-puppy');
+const request = require('request');
 
 
 const router = Router();
@@ -20,6 +21,21 @@ router.post('/randommeme', function(req, res) {
         }
       ]
     }))
+});
+
+router.post('/randomchucknorris', function(req, res, next) {
+  request("https://api.chucknorris.io/jokes/random", function(err, response, body) {
+    if(err || response.statusCode !== 200) {
+      return res.sendStatus(500);
+    }
+
+    res.json({
+      response_type: 'in_channel',
+      channel: 'CHSSBBX5F',
+      text: `${JSON.parse(body).value}`,
+    })
+    
+  })
 });
 
 module.exports = router;
