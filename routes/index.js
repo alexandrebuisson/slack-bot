@@ -40,7 +40,7 @@ router.post('/randomchucknorris', function(req, res) {
 
 router.post('/randomjoke', function(req, res) {
 
-  const rnd = Math.floor(Math.random() *  115);
+  const rnd = Math.floor(Math.random() * 115) + 1;
 
   request(`https://bridge.buddyweb.fr/api/blagues/blagues/${rnd}`, function(err, response, body) {
     if (err || response.statusCode !== 200) {
