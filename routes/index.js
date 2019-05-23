@@ -50,7 +50,7 @@ router.post('/randomjoke', function(req, res) {
     res.json({
       response_type: 'in_channel',
       channel: 'CHSSBBX5F',
-      text: `${body}`
+      text: `${JSON.parse(body).blagues}`
     })
 
   })
