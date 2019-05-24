@@ -1,6 +1,7 @@
 # slack-bot
 ## Pepe Memes Bot
 
-Used packages :
-random-puppy --> https://www.npmjs.com/package/random-puppy
-slackjs --> https://www.npmjs.com/package/slack
+![OpenSource logo](http://www.openmaint.org/images/opensource-logo.png/image)
+
+
+Random memes, jokes, Chuck Norris Fact
