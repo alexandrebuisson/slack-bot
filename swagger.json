@@ -23,8 +23,8 @@
   ],
   "paths": {
     "/randommeme": {
-      "get": {
-        "description": "Return a random meme from dankmemes subreddit.\n",
+      "post": {
+        "description": "Return a JSON for slack and generate a random meme from dankmemes subreddit.\n",
         "operationId": "findPets",
         "parameters": [
           {
