@@ -17,7 +17,8 @@
     "random-puppy": "^1.1.0",
     "request": "^2.88.0",
     "slack": "^11.0.2",
-    "snoowrap": "^1.15.2"
+    "snoowrap": "^1.15.2",
+    "swagger-ui-express": "^4.0.4"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
