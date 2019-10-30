@@ -81,13 +81,7 @@ router.post('/cowsay', (req, res) => {
   return res.json({
     response_type: 'in_channel',
     channel: 'CHSSBBX5F',
-    text: {`
-           \   ^__^
-            \  (oo)\_______
-               (__)\       )\/\
-                    ||----w |
-                    ||     ||
-     `}
+    text,
   });
 });
 
