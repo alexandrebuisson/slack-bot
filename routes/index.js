@@ -60,16 +60,14 @@ router.post('/randomjoke', (req, res) => {
 });
 
 router.post('/cowsay', (req, res) => {
-  const text = req.query.text;
+  const text = req.body.text;
   return res.send(`
-    
  <${text}>
-    
-            \   ^__^
-             \  (oo)\_______
-                (__)\       )\/\
-                    ||----w |
-                    ||     ||
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                 ||----w |
+                 ||     ||
   `);
 });
 
