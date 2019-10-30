@@ -6,6 +6,23 @@ const request = require('request');
 
 const router = Router();
 
+router.post('/subreddit', (req, res) => {
+  const text = req.body.text
+  const event = randomPuppy.all(text);
+  event.on('data', url => res.json({
+    response_type: 'in_channel',
+    channel: 'CHSSBBX5F',
+    text: `Image aléatoire depuis ${text} :`,
+    attachments: [
+      {
+        fallback: 'Required plain-text summary of the attachment.',
+        color: '#36a64f',
+        image_url: url
+      }
+    ]
+  }));
+});
+
 router.post('/randommeme', (req, res) => {
   const event = randomPuppy.all('dankmemes');
   event.on('data', url => res.json({
@@ -61,14 +78,17 @@ router.post('/randomjoke', (req, res) => {
 
 router.post('/cowsay', (req, res) => {
   const text = req.body.text;
-  return res.send(`
- <${text}>
-        \   ^__^
-         \  (oo)\_______
-            (__)\       )\/\
-                 ||----w |
-                 ||     ||
-  `);
+  return res.json({
+    response_type: 'in_channel',
+    channel: 'CHSSBBX5F',
+    text: {`
+           \   ^__^
+            \  (oo)\_______
+               (__)\       )\/\
+                    ||----w |
+                    ||     ||
+     `}
+  });
 });
 
 module.exports = router;
