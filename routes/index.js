@@ -5,7 +5,7 @@ const request = require('request');
 
 const router = Router();
 
-router.post('/subreddit', function (req, res) {
+router.post('/subreddit', function(req, res) {
   const text = req.body.text
   const event = randomPuppy.all(text);
   event.on('data', url => res.json({
@@ -22,7 +22,7 @@ router.post('/subreddit', function (req, res) {
   }));
 });
 
-router.post('/randommeme', function (req, res) {
+router.post('/randommeme', function(req, res) {
   const event = randomPuppy.all('dankmemes');
   event.on('data', url => res.json({
     response_type: 'in_channel',
@@ -38,7 +38,7 @@ router.post('/randommeme', function (req, res) {
   }));
 });
 
-router.post('/randomchucknorris', function (req, res) {
+router.post('/randomchucknorris', function(req, res) {
   request('https://api.chucknorris.io/jokes/random', (err, response, body) => {
     if (err || response.statusCode !== 200) {
       return res.json({
@@ -56,7 +56,7 @@ router.post('/randomchucknorris', function (req, res) {
   });
 });
 
-router.post('/randomjoke', function (req, res) {
+router.post('/randomjoke', function(req, res) {
   const rnd = Math.floor(Math.random() * 115) + 1;
   request(`https://bridge.buddyweb.fr/api/blagues/blagues/${rnd}`, (err, response, body) => {
     if (err || response.statusCode !== 200) {
@@ -75,7 +75,7 @@ router.post('/randomjoke', function (req, res) {
   });
 });
 
-router.post('/cowsay', function (req, res) {
+router.post('/cowsay', function(req, res) {
   const text = req.body.text;
   return res.json({
     response_type: 'in_channel',
